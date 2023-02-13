@@ -1,0 +1,38 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/fontawesome-free-5.15.2-web/css/all.css">
+</head>
+
+<body style=" background-color: rgb(255, 255, 255);">
+  <div class=" container rounded-3 border border-5 border-dark my-5 bg-white" style="height:auto;">
+      <div>
+      <h1 class=" h1">To-Do List</h1> 
+  <div class="row">
+          <div class=" col-8">
+      <input class=" py-3 form-control shadow" placeholder="add your task" type="text" id="inputText" #task> 
+          </div>
+          <div class="col-2">
+              <!-- <i onclick="addList()" class=" btn btn-dark rounded-pill fas fa-4x fa-plus-circle "></i> -->
+              <button (click)="addTask(task.value)" class=" mt-2 btn btn-dark">ADD TASK</button>
+              <!-- <button onclick="addTask()" class=" mt-2 btn btn-dark"> Add </button> -->
+          </div>
+      </div>
+  </div>
+      <hr>
+      <div class=" row rounded bg-white">
+        <div class=" col-12"> 
+        <!-- <ul class=" list-group" id="list"></ul> -->
+        <ul *ngFor="let item of list">
+          <div class="checkbox">
+            <label>
+               <input type="checkbox" name="packersOff" class="strikethrough" value="1">
+               <span>{{item.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)="removeTask(item.id)" class=" mt-2 btn btn-dark"> REMOVE TASK </button>
+
+            </label>
+         </div>
+        </ul>
+        </div> 
+    </div> 
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
